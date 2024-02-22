@@ -1,20 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { IProduct } from './product.model';
 import { SortListPipe } from '../sort-list.pipe';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'bot-catalog',
   templateUrl: './catalog.component.html',
   styleUrls: ['./catalog.component.css']
 })
-export class CatalogComponent {
+
+
+
+export class CatalogComponent implements OnInit {
 
   products :IProduct[];
+  filter? : string;
 
-  filter : string = '';
   discount : number = 0;
+  //how to use Inject service
+  //private cartSvc:CartService = Inject(CartService);
 
-  constructor(){
+  constructor(private cartSvc:CartService){
     this.products=[
       {
         id: 1,
@@ -192,14 +198,27 @@ export class CatalogComponent {
     ];
   }
 
+  
+
+  addToCart(product: IProduct){
+    this.cartSvc.add(product);
+    //this.cart.push(product);
+    //console.log(`product ${product.name} added to cart`);
+  }
+
+
 getImageUrl(product:IProduct){
 return  '/assets/images/robot-parts/' + product.imageName;
 
 }
 
+ngOnInit(): void{
+  this.getFilteredProducts();
+  this.filter = '';
+}
 getFilteredProducts():IProduct[]{
   return this.filter === ''
-  ? this.products 
+  ? this.products
   : this.products.filter((product) => product.category === this.filter) as IProduct[];
 }
 

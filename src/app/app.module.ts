@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { CatalogComponent } from './catalog/catalog.component';
 import { SiteHeaderComponent } from './site-header/site-header.component';
 import { SortListPipe } from './sort-list.pipe';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { SortListPipe } from './sort-list.pipe';
     HomeComponent,
     CatalogComponent,
     SiteHeaderComponent,
-    SortListPipe
+    SortListPipe,
+    ProductDetailsComponent
 
   ],
   imports: [

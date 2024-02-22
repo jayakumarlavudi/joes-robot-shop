@@ -1,0 +1,19 @@
+<div class="product">
+    <div class="product-details">
+      <!-- <img src="{{ '/assets/images/robot-parts/' + product.imageName }}" [alt]="product.name" /> -->
+        <img [src]="getImageUrl(product)" [alt]="product.name" /> 
+      <div class="product-info">
+        <div class="name">{{ product.name }}</div>
+        <div class="description">{{ product.description }}</div>
+        <div class="category">Part Type: {{ product.category }} </div>
+      </div>
+    </div>
+    <div class="price">
+      <div *ngIf="product.discount ===0">{{ product.price | currency}}</div>
+      <div *ngIf="product.discount >0" class="discount">
+          {{(product.price * (1-product.discount)) |currency : 'USD' }}
+      </div>
+      <!-- sending EventEmitter() from products list (child) to product parent  -->
+      <button class="cta" (click)="this.buyButtonClicked(product)" >Buy</button>
+    </div>
+  </div>
