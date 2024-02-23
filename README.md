@@ -28,3 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![image](https://github.com/jayakumarlavudi/joes-robot-shop/assets/22158186/f249f753-d72f-4c54-94ec-0b5cdc20f4af)
 ![image](https://github.com/jayakumarlavudi/joes-robot-shop/assets/22158186/144a7648-7743-41d2-998b-379d79784a1d)
 
+Angular Forms:
+![image](https://github.com/jayakumarlavudi/joes-robot-shop/assets/22158186/9300fa11-7b77-4766-9dae-fe7c25af7b66)
+
+
